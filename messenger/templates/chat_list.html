@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chats</h1>
+    <ul>
+        {% for chat in chats %}
+            <li><a href="{% url 'chat_detail' pk=chat.pk %}">{{ chat.name }}</a></li>
+        {% empty %}
+            <li>No chats found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
